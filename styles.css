@@ -961,8 +961,8 @@ footer p {
 
 .hero-photo {
   display: block;
-  width: 300px;
-  height: 390px;
+  width: clamp(280px, 28vw, 400px);
+  height: clamp(360px, 36vw, 510px);
   object-fit: cover;
   object-position: center 10%;
   border-radius: 25px;
@@ -1120,7 +1120,7 @@ footer p {
   .hero-tools  { justify-content: center; }
   .tool-chips  { justify-content: center; }
   .hero-right  { padding: 24px 40px; }
-  .hero-photo  { width: 220px; height: 280px; }
+  .hero-photo  { width: clamp(220px, 38vw, 300px); height: clamp(280px, 48vw, 380px); }
   .badge-avail { left: -4px; bottom: 14px; font-size: 0.68rem; padding: 6px 10px; }
   .badge-count { right: -4px; top: 12px;  font-size: 0.68rem; padding: 6px 10px; }
   .hero-deco   { display: none; }
