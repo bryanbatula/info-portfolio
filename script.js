@@ -234,12 +234,82 @@ const statsObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.about-stats').forEach(s => statsObserver.observe(s));
 
-/* ─── Add cert badge glow on hover ──────────────────────────── */
+/* ─── Add tag glow on project row hover ─────────────────────── */
 document.querySelectorAll('.project-tag').forEach(tag => {
-  tag.closest('.project-card').addEventListener('mouseenter', () => {
-    tag.style.boxShadow = '0 0 12px rgba(124,106,255,0.4)';
+  const row = tag.closest('.project-row');
+  if (!row) return;
+  row.addEventListener('mouseenter', () => { tag.style.boxShadow = '0 0 10px rgba(124,106,255,0.3)'; });
+  row.addEventListener('mouseleave', () => { tag.style.boxShadow = ''; });
+});
+
+/* ─── Scroll progress bar ────────────────────────────────────── */
+const scrollProgress = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const scrolled  = window.scrollY;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.width = ((scrolled / maxScroll) * 100) + '%';
+}, { passive: true });
+
+/* ─── Cursor glow (lerp follow) ──────────────────────────────── */
+const cursorGlow = document.getElementById('cursorGlow');
+let mouseX = window.innerWidth  / 2;
+let mouseY = window.innerHeight / 2;
+let glowX  = mouseX;
+let glowY  = mouseY;
+
+window.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+}, { passive: true });
+
+(function animateGlow() {
+  glowX += (mouseX - glowX) * 0.07;
+  glowY += (mouseY - glowY) * 0.07;
+  cursorGlow.style.left = glowX + 'px';
+  cursorGlow.style.top  = glowY + 'px';
+  requestAnimationFrame(animateGlow);
+})();
+
+/* ─── 3D card tilt on hover ──────────────────────────────────── */
+document.querySelectorAll('.skill-card, .why-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r    = card.getBoundingClientRect();
+    const x    = e.clientX - r.left;
+    const y    = e.clientY - r.top;
+    const cx   = r.width  / 2;
+    const cy   = r.height / 2;
+    const rotX = ((y - cy) / cy) * -7;
+    const rotY = ((x - cx) / cx) *  7;
+    card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-6px) scale(1.01)`;
+    card.style.transition = 'box-shadow 0.2s ease, border-color 0.2s ease';
   });
-  tag.closest('.project-card').addEventListener('mouseleave', () => {
-    tag.style.boxShadow = '';
+  card.addEventListener('mouseleave', () => {
+    card.style.transform  = '';
+    card.style.transition = '';
   });
 });
+
+/* ─── Magnetic hero CTA buttons ─────────────────────────────── */
+document.querySelectorAll('.hero-cta .btn-primary, .hero-cta .btn-ghost').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r  = btn.getBoundingClientRect();
+    const dx = (e.clientX - r.left - r.width  / 2) * 0.18;
+    const dy = (e.clientY - r.top  - r.height / 2) * 0.18;
+    btn.style.transform = `translate(${dx}px, ${dy}px) translateY(-2px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+  });
+});
+
+/* ─── Reveal-right via IntersectionObserver ──────────────────── */
+const revealRightEls = document.querySelectorAll('.reveal-right');
+const revealRightObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealRightObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+revealRightEls.forEach(el => revealRightObs.observe(el));

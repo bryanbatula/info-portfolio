@@ -12,6 +12,7 @@
 <body>
 
   <!-- ─── Navigation ─────────────────────────────────────────────── -->
+  <div class="scroll-progress" id="scrollProgress"></div>
   <nav id="navbar">
     <div class="nav-inner">
       <span class="nav-logo">bryan<span class="accent">.</span>dev</span>
@@ -33,32 +34,51 @@
       <canvas id="particleCanvas"></canvas>
     </div>
     <div class="hero-content">
-      <div class="hero-badge reveal">
-        <span class="dot"></span> Open to opportunities · Remote-ready
+      <div class="hero-left">
+        <div class="hero-badge reveal">
+          <span class="dot"></span> Open to opportunities · Remote-ready
+        </div>
+        <h1 class="hero-title reveal">
+          I build software that<br />
+          <span class="accent typewriter" id="typewriter"></span>
+        </h1>
+        <p class="hero-sub reveal">
+          Full-Stack Developer &amp; AI-Augmented Engineer · Binan, Laguna, PH 🇵🇭<br />
+          I ship practical systems fast — from a sold dental clinic platform to
+          government records software — and I do it all with AI in the loop.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn-primary">See My Work</a>
+          <a href="#contact" class="btn-ghost">Get In Touch →</a>
+        </div>
+        <div class="hero-tools reveal">
+          <span>Daily stack:</span>
+          <div class="tool-chips">
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>Cursor IDE</span>
+            <span>Claude Code</span>
+            <span>ChatGPT</span>
+            <span>PostgreSQL</span>
+            <span>REST APIs</span>
+          </div>
+        </div>
       </div>
-      <h1 class="hero-title reveal">
-        I build software that<br />
-        <span class="accent typewriter" id="typewriter"></span>
-      </h1>
-      <p class="hero-sub reveal">
-        Full-Stack Developer &amp; AI-Augmented Engineer · Binan, Laguna, PH 🇵🇭<br />
-        I ship practical systems fast — from a sold dental clinic platform to
-        government records software — and I do it all with AI in the loop.
-      </p>
-      <div class="hero-cta reveal">
-        <a href="#projects" class="btn-primary">See My Work</a>
-        <a href="#contact" class="btn-ghost">Get In Touch →</a>
-      </div>
-      <div class="hero-tools reveal">
-        <span>Daily stack:</span>
-        <div class="tool-chips">
-          <span>JavaScript</span>
-          <span>Node.js</span>
-          <span>Cursor IDE</span>
-          <span>Claude Code</span>
-          <span>ChatGPT</span>
-          <span>PostgreSQL</span>
-          <span>REST APIs</span>
+      <div class="hero-right reveal-right">
+        <div class="hero-photo-wrapper">
+          <div class="hero-photo-frame">
+            <img src="profile.jpg" alt="Bryan Batula" class="hero-photo" />
+          </div>
+          <div class="hero-photo-glow"></div>
+          <div class="hero-photo-badge badge-avail">
+            <span class="dot"></span> Available
+          </div>
+          <div class="hero-photo-badge badge-count">
+            <strong>11+</strong>&nbsp;Projects
+          </div>
+          <div class="hero-deco deco-1"></div>
+          <div class="hero-deco deco-2"></div>
+          <div class="hero-deco deco-3"></div>
         </div>
       </div>
     </div>
@@ -227,203 +247,241 @@
       <p class="section-label reveal">// projects</p>
       <h2 class="section-title reveal">Things I've actually <span class="accent">shipped</span></h2>
 
-      <div class="projects-grid">
+      <div class="projects-list">
 
-        <!-- ── Projects with live demos ── -->
-
-        <div class="project-card reveal featured">
-          <div class="project-tag">Commercially Sold</div>
-          <div class="project-icon">🦷</div>
-          <h3>Dental Clinic Management System</h3>
-          <p>
-            Architected and built a full-featured clinic management platform covering
-            patient registration, appointment scheduling, treatment history, and billing
-            records. Commercially sold to a real dental clinic client — full SDLC ownership
-            from requirements gathering to deployment and handover.
-          </p>
-          <div class="project-stack">
-            <span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>JavaScript</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Live Demo:</span>
-            <a href="https://dental-clinic-7uii.onrender.com/login" target="_blank" class="outcome-link">dental-clinic-7uii.onrender.com ↗</a>
+        <div class="project-row reveal">
+          <span class="project-num">01</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <img src="img/dental1.png" alt="Dental Clinic Management System" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>Dental Clinic Management System</h3>
+                <span class="project-tag tag-sold">Commercially Sold</span>
+              </div>
+              <p>Architected and built a full-featured clinic management platform covering patient registration, appointment scheduling, treatment history, and billing. Commercially sold to a real dental clinic — full SDLC ownership from requirements gathering to deployment.</p>
+              <div class="project-stack">
+                <span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>JavaScript</span>
+              </div>
+              <a href="https://dental-clinic-7uii.onrender.com/login" target="_blank" class="project-link">
+                Live Demo
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="project-card reveal featured">
-          <div class="project-tag">Live on Vercel</div>
-          <div class="project-icon">📦</div>
-          <h3>InvenTrack PH — Inventory &amp; Procurement System</h3>
-          <p>
-            Built a BIR-audit-ready Inventory and Procurement System tailored for Philippine
-            MSMEs — covering stock tracking, procurement workflows, and compliance-ready
-            reporting. Features secure authentication and a clean dashboard for end-to-end
-            inventory visibility.
-          </p>
-          <div class="project-stack">
-            <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Vercel</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Live:</span>
-            <a href="https://inventory-tracking-three.vercel.app/" target="_blank" class="outcome-link">inventory-tracking-three.vercel.app ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card reveal featured">
-          <div class="project-tag">Live on Vercel</div>
-          <div class="project-icon">☕</div>
-          <h3>Brew &amp; Bites Café POS System</h3>
-          <p>
-            A fully functional, deployed Point-of-Sale system for a café business — with a
-            real-time dashboard (revenue, orders, avg. order value), POS terminal, order
-            management, inventory alerts, menu editor, and weekly reports. Live with actual
-            transaction data.
-          </p>
-          <div class="project-stack">
-            <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Vercel</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Live:</span>
-            <a href="https://brew-bites-pos.vercel.app" target="_blank" class="outcome-link">brew-bites-pos.vercel.app ↗</a>
+        <div class="project-row reveal">
+          <span class="project-num">02</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <img src="img/invent1.png" alt="InvenTrack PH" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>InvenTrack PH — Inventory &amp; Procurement System</h3>
+                <span class="project-tag tag-live">Live on Vercel</span>
+              </div>
+              <p>BIR-audit-ready inventory and procurement system for Philippine MSMEs — stock tracking, procurement workflows, and compliance-ready reporting with secure authentication and an end-to-end dashboard.</p>
+              <div class="project-stack">
+                <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Vercel</span>
+              </div>
+              <a href="https://inventory-tracking-three.vercel.app/" target="_blank" class="project-link">
+                View Live
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="project-card reveal featured">
-          <div class="project-tag">Live on Vercel</div>
-          <div class="project-icon">🕐</div>
-          <h3>DTR System — Payroll Management</h3>
-          <p>
-            Built a full-featured Daily Time Record and Payroll Management system that tracks
-            employee attendance, time-in/time-out entries, tardiness, and overtime in real time.
-            Includes a live dashboard with department-level summaries and a complete DTR records log.
-          </p>
-          <div class="project-stack">
-            <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Vercel</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Live:</span>
-            <a href="https://dtr-system-amber.vercel.app/" target="_blank" class="outcome-link">dtr-system-amber.vercel.app ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card reveal featured">
-          <div class="project-tag">Directly Relevant</div>
-          <div class="project-icon">⚡</div>
-          <h3>AI Automation Developer Portfolio</h3>
-          <p>
-            Built a complete AI Automation showcase site demonstrating end-to-end knowledge
-            of automation workflows: invoice processing pipelines, employee onboarding flows,
-            scheduled reporting automation, and process digitization — using Power Automate,
-            AI Builder, and SharePoint concepts.
-          </p>
-          <div class="project-stack">
-            <span>Power Automate</span><span>AI Builder</span><span>Power Apps</span><span>SharePoint</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Live:</span>
-            <a href="https://bryanbatula.github.io/project1/" target="_blank" class="outcome-link">bryanbatula.github.io/project1 ↗</a>
+        <div class="project-row reveal">
+          <span class="project-num">03</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <img src="img/cafe1.png" alt="Brew & Bites Café POS System" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>Brew &amp; Bites Café POS System</h3>
+                <span class="project-tag tag-live">Live on Vercel</span>
+              </div>
+              <p>Fully deployed Point-of-Sale system for a café — real-time revenue dashboard, POS terminal, order management, inventory alerts, menu editor, and weekly reports. Live with actual transaction data.</p>
+              <div class="project-stack">
+                <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Vercel</span>
+              </div>
+              <a href="https://brew-bites-pos.vercel.app" target="_blank" class="project-link">
+                View Live
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="project-card reveal">
-          <div class="project-icon">🧠</div>
-          <h3>AI Language Engineer Portfolio</h3>
-          <p>
-            Designed and deployed a polished AI Engineer portfolio site showcasing speech
-            analysis pipelines (Whisper + phoneme alignment), LLM-powered grammar tutors
-            (GPT-4 + LangChain), adaptive learning path engines, and NLP sentence analysis
-            APIs — demonstrating depth across the modern AI stack.
-          </p>
-          <div class="project-stack">
-            <span>LLMs</span><span>NLP</span><span>Speech AI</span><span>FastAPI</span><span>Python</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Live:</span>
-            <a href="https://bryanbatula.github.io/Eng-setup/" target="_blank" class="outcome-link">bryanbatula.github.io/Eng-setup ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-icon">🌐</div>
-          <h3>Personal Portfolio Website</h3>
-          <p>
-            Designed and deployed a server-side rendered portfolio website using Node.js,
-            Express.js, and EJS templating engine with responsive custom CSS layout.
-          </p>
-          <div class="project-stack">
-            <span>Express.js</span><span>EJS</span><span>Node.js</span><span>CSS3</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Live:</span>
-            <a href="https://bryan-batula-portfolio.vercel.app/" target="_blank" class="outcome-link">bryan-batula-portfolio.vercel.app ↗</a>
+        <div class="project-row reveal">
+          <span class="project-num">04</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <img src="img/dtr1.png" alt="DTR System" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>DTR System — Payroll Management</h3>
+                <span class="project-tag tag-live">Live on Vercel</span>
+              </div>
+              <p>Daily Time Record and Payroll Management system tracking employee attendance, time-in/out entries, tardiness, and overtime in real time. Includes live department-level summaries and a full DTR records log.</p>
+              <div class="project-stack">
+                <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Vercel</span>
+              </div>
+              <a href="https://dtr-system-amber.vercel.app/" target="_blank" class="project-link">
+                View Live
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- ── Projects without live demos ── -->
-
-        <div class="project-card reveal featured">
-          <div class="project-tag">Government Deployed</div>
-          <div class="project-icon">🏛️</div>
-          <h3>Barangay Records &amp; Information Management System</h3>
-          <p>
-            Identified administrative bottlenecks in a local government barangay unit and
-            engineered a records management desktop application to digitize and streamline
-            operations. Deployed offline per government requirements — replaced paper-based
-            workflows with a centralized local database.
-          </p>
-          <div class="project-stack">
-            <span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>JavaScript</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Outcome:</span> Government deployed · Offline desktop deployment
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-icon">🔒</div>
-          <h3>Secure CRUD Web Application</h3>
-          <p>
-            Built a full-stack Create-Read-Update-Delete web application with a Node.js and
-            Express.js backend on PostgreSQL. Implemented parameterized SQL queries to prevent
-            SQL Injection attacks and configured secure session-based user authentication.
-          </p>
-          <div class="project-stack">
-            <span>Node.js</span><span>Express.js</span><span>PostgreSQL</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Focus:</span> Security-by-design, SQLi prevention
+        <div class="project-row reveal">
+          <span class="project-num">05</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <img src="img/brgy1.png" alt="Barangay Records System" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>Barangay Records &amp; Information Management System</h3>
+                <span class="project-tag tag-gov">Government Deployed</span>
+              </div>
+              <p>Desktop records management system for a local government barangay unit — digitizing and centralizing paper-based workflows into a local PostgreSQL database. Deployed offline per government requirements.</p>
+              <div class="project-stack">
+                <span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>JavaScript</span>
+              </div>
+              <span class="project-note">Offline deployment · Government unit</span>
+            </div>
           </div>
         </div>
 
-        <div class="project-card reveal">
-          <div class="project-icon">🖥️</div>
-          <h3>Cross-Platform Desktop Utility</h3>
-          <p>
-            Developed a cross-platform desktop application using Electron.js, integrating
-            web technologies (HTML5, CSS3, JavaScript) with native operating system
-            capabilities to deliver a seamless desktop experience.
-          </p>
-          <div class="project-stack">
-            <span>Electron.js</span><span>HTML5</span><span>CSS3</span><span>Node.js</span>
-          </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Focus:</span> Cross-platform, native OS integration
+        <div class="project-row reveal">
+          <span class="project-num">06</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">⚡</div>
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>AI Automation Developer Portfolio</h3>
+                <span class="project-tag tag-rel">Directly Relevant</span>
+              </div>
+              <p>Complete AI Automation showcase demonstrating invoice processing pipelines, employee onboarding flows, scheduled reporting automation, and process digitization — built with Power Automate, AI Builder, and SharePoint.</p>
+              <div class="project-stack">
+                <span>Power Automate</span><span>AI Builder</span><span>Power Apps</span><span>SharePoint</span>
+              </div>
+              <a href="https://bryanbatula.github.io/project1/" target="_blank" class="project-link">
+                View Live
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="project-card reveal">
-          <div class="project-icon">🏦</div>
-          <h3>Banking IT Support &amp; Data Operations</h3>
-          <p>
-            OJT at Land Bank of the Philippines — processed and maintained confidential
-            client financial records in compliance with the Data Privacy Act of 2012.
-            Delivered first-level IT technical support for digital banking systems.
-          </p>
-          <div class="project-stack">
-            <span>Data Privacy Act</span><span>IT Support</span><span>Banking Systems</span>
+        <div class="project-row reveal">
+          <span class="project-num">07</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🧠</div>
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>AI Language Engineer Portfolio</h3>
+              </div>
+              <p>AI Engineer portfolio showcasing speech analysis pipelines (Whisper + phoneme alignment), LLM-powered grammar tutors (GPT-4 + LangChain), adaptive learning engines, and NLP sentence analysis APIs.</p>
+              <div class="project-stack">
+                <span>LLMs</span><span>NLP</span><span>Speech AI</span><span>FastAPI</span><span>Python</span>
+              </div>
+              <a href="https://bryanbatula.github.io/Eng-setup/" target="_blank" class="project-link">
+                View Live
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
           </div>
-          <div class="project-outcome">
-            <span class="outcome-label">Context:</span> High-security regulated environment
+        </div>
+
+        <div class="project-row reveal">
+          <span class="project-num">08</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🌐</div>
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>Personal Portfolio Website</h3>
+              </div>
+              <p>Server-side rendered portfolio built with Node.js, Express.js, and EJS templating — fully responsive with a custom CSS layout and deployed on Vercel.</p>
+              <div class="project-stack">
+                <span>Express.js</span><span>EJS</span><span>Node.js</span><span>CSS3</span>
+              </div>
+              <a href="https://bryan-batula-portfolio.vercel.app/" target="_blank" class="project-link">
+                View Live
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-row reveal">
+          <span class="project-num">09</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🔒</div>
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>Secure CRUD Web Application</h3>
+              </div>
+              <p>Full-stack CRUD application with Node.js and PostgreSQL. Parameterized SQL queries prevent injection attacks; secure session-based authentication and security-by-design principles applied throughout.</p>
+              <div class="project-stack">
+                <span>Node.js</span><span>Express.js</span><span>PostgreSQL</span>
+              </div>
+              <span class="project-note">Security-by-design · SQLi prevention</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-row reveal">
+          <span class="project-num">10</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🖥️</div>
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>Cross-Platform Desktop Utility</h3>
+              </div>
+              <p>Desktop application built with Electron.js, bridging web technologies (HTML5, CSS3, JavaScript) with native OS capabilities for a seamless cross-platform experience.</p>
+              <div class="project-stack">
+                <span>Electron.js</span><span>HTML5</span><span>CSS3</span><span>Node.js</span>
+              </div>
+              <span class="project-note">Cross-platform · Native OS integration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-row reveal">
+          <span class="project-num">11</span>
+          <div class="project-inner">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🏦</div>
+            </div>
+            <div class="project-content">
+              <div class="project-content-top">
+                <h3>Banking IT Support &amp; Data Operations</h3>
+              </div>
+              <p>OJT at Land Bank of the Philippines — processed confidential financial records under the Data Privacy Act of 2012 and delivered first-level IT support for digital banking systems.</p>
+              <div class="project-stack">
+                <span>Data Privacy Act</span><span>IT Support</span><span>Banking Systems</span>
+              </div>
+              <span class="project-note">High-security regulated environment</span>
+            </div>
           </div>
         </div>
 
@@ -510,6 +568,7 @@
     </div>
   </footer>
 
+  <div class="cursor-glow" id="cursorGlow"></div>
   <script src="script.js"></script>
 </body>
 </html>
