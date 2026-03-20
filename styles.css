@@ -792,6 +792,17 @@ ul { list-style: none; }
 .form-group textarea::placeholder {
   color: var(--text-3);
 }
+.form-status {
+  min-height: 1.4em;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+.form-status--ok  { color: #4ade80; }
+.form-status--err { color: #f87171; }
+
 .form-note {
   margin-top: 16px;
   font-size: 0.85rem;

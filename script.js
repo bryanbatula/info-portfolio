@@ -181,22 +181,51 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/* ─── Contact form ────────────────────────────────────────────── */
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', e => {
+/* ─── Contact form — Formspree ───────────────────────────────── */
+const FORMSPREE_ID = 'xyknvzvr';
+
+const form       = document.getElementById('contactForm');
+const submitBtn  = document.getElementById('submitBtn');
+const formStatus = document.getElementById('formStatus');
+
+form.addEventListener('submit', async e => {
   e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent = 'Message Sent ✓';
-  btn.style.background = '#4ade80';
-  btn.style.cursor = 'default';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Send Message →';
-    btn.style.background = '';
-    btn.style.cursor = '';
-    btn.disabled = false;
-    form.reset();
-  }, 3000);
+
+  submitBtn.textContent = 'Sending…';
+  submitBtn.disabled    = true;
+  formStatus.textContent = '';
+  formStatus.className   = 'form-status';
+
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method:  'POST',
+      headers: { 'Accept': 'application/json' },
+      body:    new FormData(form)
+    });
+
+    if (res.ok) {
+      submitBtn.textContent    = 'Message Sent ✓';
+      submitBtn.style.background = 'var(--green, #4ade80)';
+      formStatus.textContent   = 'Thanks! I\'ll get back to you shortly.';
+      formStatus.classList.add('form-status--ok');
+      form.reset();
+      setTimeout(() => {
+        submitBtn.textContent      = 'Send Message →';
+        submitBtn.style.background = '';
+        submitBtn.disabled         = false;
+        formStatus.textContent     = '';
+        formStatus.className       = 'form-status';
+      }, 4000);
+    } else {
+      const data = await res.json();
+      throw new Error(data?.errors?.map(err => err.message).join(', ') || 'Submission failed.');
+    }
+  } catch (err) {
+    submitBtn.textContent  = 'Send Message →';
+    submitBtn.disabled     = false;
+    formStatus.textContent = `Something went wrong: ${err.message}`;
+    formStatus.classList.add('form-status--err');
+  }
 });
 
 /* ─── Animate stat numbers ───────────────────────────────────── */
