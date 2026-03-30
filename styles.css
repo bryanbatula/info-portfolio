@@ -177,25 +177,14 @@ ul { list-style: none; }
   z-index: 1;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 120px 24px 80px;
+  padding: 140px 24px 100px;
   width: 100%;
   display: flex;
-  align-items: center;
-  gap: 48px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
 }
 
-.hero-left {
-  flex: 1;
-  min-width: 0;
-}
-
-.hero-right {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-}
 
 .hero-badge {
   display: inline-flex;
@@ -891,18 +880,18 @@ footer p {
   .form-row { grid-template-columns: 1fr; }
 
   /* Hero CTA stacks */
-  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta { flex-direction: column; align-items: flex-start; }
   .hero-cta .btn-primary,
-  .hero-cta .btn-ghost { text-align: center; }
+  .hero-cta .btn-ghost { text-align: left; }
 }
 
 @media (max-width: 480px) {
   #about, #skills, #projects, #why, #contact { padding: 60px 0; }
   .hero-title   { font-size: 2.2rem; }
   .section-title { font-size: 1.75rem; }
-  .hero-tools   { flex-direction: column; align-items: center; }
-  .about-stats  { justify-content: center; }
-  .stat         { align-items: center; }
+  .hero-tools   { flex-direction: column; align-items: flex-start; }
+  .about-stats  { justify-content: flex-start; }
+  .stat         { align-items: flex-start; }
 }
 
 /* ─── Scroll Progress Bar ─────────────────────────────────────── */
@@ -1105,23 +1094,11 @@ footer p {
 /* ─── Hero mobile responsive ──────────────────────────────────── */
 @media (max-width: 768px) {
   .hero-content {
-    flex-direction: column;
-    gap: 40px;
-    padding-top: 100px;
-    padding-bottom: 60px;
-    text-align: center;
+    padding: 100px 24px 60px 24px;
+    text-align: left;
+    align-items: flex-start;
   }
-  .hero-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .hero-sub    { max-width: 100%; }
-  .hero-tools  { justify-content: center; }
-  .tool-chips  { justify-content: center; }
-  .hero-right  { padding: 24px 40px; }
-  .hero-photo  { width: clamp(220px, 38vw, 300px); height: clamp(280px, 48vw, 380px); }
-  .badge-avail { left: -4px; bottom: 14px; font-size: 0.68rem; padding: 6px 10px; }
-  .badge-count { right: -4px; top: 12px;  font-size: 0.68rem; padding: 6px 10px; }
-  .hero-deco   { display: none; }
+  .hero-sub   { max-width: 100%; }
+  .hero-tools { justify-content: flex-start; }
+  .tool-chips { justify-content: flex-start; }
 }
